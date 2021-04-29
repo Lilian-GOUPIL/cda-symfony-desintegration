@@ -6,7 +6,7 @@ use App\Entity\User;
 use App\Form\PasswordType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use App\Services\UserService;
+use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

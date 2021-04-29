@@ -1,19 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'add_proposal' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Ajouter une proposition' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-6 mx-auto">
             <div class="card shadow bg-dark p-4">
                 <div class="card-title">
-                    <h1 class="text-center">{{'add_proposal' | trans}}</h1>
+                    <h1 class="text-center">{{'Ajouter une proposition' | trans}}</h1>
                 </div>
                 <div class="card-body">
-                    {{ include('proposal/_form.html.twig', {'button_type': 'btn-success', 'button_label': 'submit' | trans}) }}
-
-                    <div class="text-center mt-4">
-                        <a href="{{ path('proposal_index') }}"><button class="btn btn-primary">{{'back_to_list' | trans}}</button></a>
+                    {{ include('proposal/_form.html.twig', {'button_type': 'btn-success', 'button_label': 'Valider' | trans}) }}
+                </div>
+                <div class="d-flex flex-column justify-content-around align-items-center">
+                    <div class="card shadow bg-dark p-4 mt-4">
+                        <h3 class='text-center'>{{'Navigation' | trans}}</h3>
+                        <div class="d-flex flex-column justify-content-around align-items-center my-2">
+                            <a href="{{ path('proposal_index') }}"><button class="btn btn-primary">{{'Retour à la liste' | trans}}</button></a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,29 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'my_account' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Mon compte' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-6 mx-auto">
             <div class="card shadow bg-dark p-4">
                 {% if app.user.forcePasswordChange %}
-                    <h1 class="text-center text-warning">{{'change_password_to_use_the_app' | trans}}</h1>
+                    <h1 class="text-center text-warning">{{'Changez de mot de passe pour utiliser l\'application' | trans}}</h1>
                 {% else %}
-                    <h1 class="text-center">{{'my_account' | trans}}</h1>
+                    <h1 class="text-center">{{'Mon compte' | trans}}</h1>
                 {% endif %}
             </div>
             <div class="card shadow bg-dark p-4 my-4">
                 <div class="card-title">
-                    <h2 class="text-center">{{'my_infos' | trans}}</h2>
+                    <h2 class="text-center">{{'Mes informations' | trans}}</h2>
                 </div>
                 <div class="card-body">
                     <table class="table table-dark table-bordered table-hover">
                         <thead>
                             <tr class="text-center">
-                                <th class="align-middle" scope="col">{{'username' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'first_name' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'last_name' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'roles' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Nom d\'utilisateur' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Prénom' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Nom' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Rôles' | trans}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,13 +33,13 @@
                                 <td class="align-middle">{{ app.user.lastName }}</td>
                                 <td class="align-middle">
                                     {% if 'ROLE_SUPER_ADMIN' in app.user.roles %}
-                                        <p class="m-1">{{'super_admin' | trans}}</p>
+                                        <p class="m-1">{{'Super administrateur' | trans}}</p>
                                     {% endif %}
                                     {% if 'ROLE_ADMIN' in app.user.roles %}
-                                        <p class="m-1">{{'admin' | trans}}</p>
+                                        <p class="m-1">{{'Administrateur' | trans}}</p>
                                     {% endif %}
                                     {% if 'ROLE_USER' in app.user.roles %}
-                                        <p class="m-1">{{'user' | trans}}</p>
+                                        <p class="m-1">{{'Utilisateur' | trans}}</p>
                                     {% endif %}
                                 </td>
                             </tr>
@@ -49,16 +49,16 @@
             </div>
             <div class="card shadow bg-dark p-4 my-4">
                 <div class="card-title">
-                    <h2 class="text-center">{{'change_password' | trans}}</h2>
+                    <h2 class="text-center">{{'Changer de mot de passe' | trans}}</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="">
                         <div class="form-group">
-                            <label for="password" class="form-label">{{'new_password' | trans}}</label>
-                            <input id="password" class="form-control" name="password" type="password" placeholder="{{'new_password' | trans}}..." required>
+                            <label for="password" class="form-label">{{'Nouveau mot de passe' | trans}}</label>
+                            <input id="password" class="form-control" name="password" type="password" placeholder="{{'Nouveau mot de passe' | trans}}..." required>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-success" type="submit">{{'submit' | trans}}</button>
+                            <button class="btn btn-success" type="submit">{{'Valider' | trans}}</button>
                         </div>
                     </form>
                 </div>

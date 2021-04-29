@@ -3,7 +3,6 @@
 namespace App\EventSubscriber;
 
 use App\Entity\Proposal;
-use App\Services\ProposalService;
 use DateTime;
 use DateTimeZone;
 use Doctrine\Bundle\DoctrineBundle\EventSubscriber\EventSubscriberInterface;

@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'user_list' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Liste des utilisateurs' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-10 mx-auto">
             <div class="card shadow bg-dark p-4">
                 <div class="card-title">
-                    <h1 class="text-center">{{'users' | trans}}</h1>
+                    <h1 class="text-center">{{'Liste des utilisateurs' | trans}}</h1>
                 </div>
                 <div class="card-body">
                     <div class="text-center mb-4">
-                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'add_user' | trans}}</button></a>
+                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'Ajouter un utilisateur' | trans}}</button></a>
                     </div>
                     <table class="table table-dark table-bordered table-hover">
                         <thead>
                             <tr class="text-center">
-                                <th class="align-middle" scope="col">{{'id' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'username' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'first_name' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'last_name' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'roles' | trans}}</th>
-                                <th class="align-middle" scope="col">{{'actions' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Identifiant' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Nom d\'utilisateur' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Prénom' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Nom' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Rôles' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'Actions' | trans}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,29 +33,29 @@
                                 <td class="align-middle">{{ user.lastName }}</td>
                                 <td class="align-middle">
                                     {% if 'ROLE_SUPER_ADMIN' in user.roles %}
-                                        <p class="m-1">{{'super_admin' | trans}}</p>
+                                        <p class="m-1">{{'Super administrateur' | trans}}</p>
                                     {% endif %}
                                     {% if 'ROLE_ADMIN' in user.roles %}
-                                        <p class="m-1">{{'admin' | trans}}</p>
+                                        <p class="m-1">{{'Administrateur' | trans}}</p>
                                     {% endif %}
                                     {% if 'ROLE_USER' in user.roles %}
-                                        <p class="m-1">{{'user' | trans}}</p>
+                                        <p class="m-1">{{'Utilisateur' | trans}}</p>
                                     {% endif %}
                                 </td>
                                 <td class="align-middle">
-                                    <a href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary m-1">{{'details' | trans}}</button></a>
-                                    <a href="{{ path('user_edit', {'id': user.id}) }}"><button class="btn btn-warning m-1">{{'edit' | trans}}</button></a>
+                                    <a href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary m-1">{{'Détails' | trans}}</button></a>
+                                    <a href="{{ path('user_edit', {'id': user.id}) }}"><button class="btn btn-warning m-1">{{'Modifier' | trans}}</button></a>
                                 </td>
                             </tr>
                         {% else %}
                             <tr class="text-center">
-                                <td colspan="6">{{'no_user_found' | trans}}</td>
+                                <td colspan="6">{{'Aucun utilisateur trouvé' | trans}}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
                     <div class="text-center mt-4">
-                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'add_user' | trans}}</button></a>
+                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'Ajouter un utilisateur' | trans}}</button></a>
                     </div>
                 </div>
             </div>

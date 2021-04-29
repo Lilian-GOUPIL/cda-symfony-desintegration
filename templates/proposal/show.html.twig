@@ -1,52 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'proposal_details' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Détails d\'une proposition' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-10 mx-auto">
             <div class="card shadow bg-dark p-4">
                 <div class="card-title">
-                    <h1 class="text-center">{{'proposal_details' | trans}}</h1>
+                    <h1 class="text-center">{{'Détails d\'une proposition' | trans}}</h1>
                 </div>
                 <div class="card-body">
                     <table class="table table-dark table-bordered table-hover">
                         <tbody>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'id' | trans}}</th>
+                                <th class="align-middle w-50">{{'Identifiant' | trans}}</th>
                                 <td class="align-middle w-50">{{ proposal.id }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'title' | trans}}</th>
+                                <th class="align-middle w-50">{{'Titre' | trans}}</th>
                                 <td class="align-middle w-50">{{ proposal.title }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'description' | trans}}</th>
+                                <th class="align-middle w-50">{{'Description' | trans}}</th>
                                 <td class="align-middle w-50">{{ proposal.description }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'image' | trans}}</th>
+                                <th class="align-middle w-50">{{'Image' | trans}}</th>
                                 <td class="align-middle w-50"><img class="img-fluid img-thumbnail" src="{{ asset('uploads/images/') }}{{ proposal.image }}" alt="Image de la proposition" style="max-height: 300px;"></td>
-
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'proposed_by' | trans}}</th>
+                                <th class="align-middle w-50">{{'Proposée par' | trans}}</th>
                                 <td class="align-middle w-50">{{ proposal.proposedBy.firstName}} {{ proposal.proposedBy.lastName }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'proposed_the' | trans}}</th>
-                                <td class="align-middle w-50">{{ proposal.createdAt | localizeddate('long', 'medium', null) | capitalize }}</td>
+                                <th class="align-middle w-50">{{'Date de création' | trans}}</th>
+                                <td class="align-middle w-50">{{ proposal.createdAt | localizeddate('long', 'medium', null) }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'last_update_the' | trans}}</th>
-                                <td class="align-middle w-50">{{ proposal.lastUpdatedAt | localizeddate('long', 'medium', null) | capitalize }}</td>
+                                <th class="align-middle w-50">{{'Date de la dernière modification' | trans}}</th>
+                                <td class="align-middle w-50">{{ proposal.lastUpdatedAt | localizeddate('long', 'medium', null) }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'number_of_votes' | trans}}</th>
+                                <th class="align-middle w-50">{{'Nombre de votes' | trans}}</th>
                                 <td class="align-middle w-50">{{ proposal.votedBy | length }}</td>
                             </tr>
                             <tr class="text-center">
-                                <th class="align-middle w-50">{{'voted_by' | trans}}</th>
+                                <th class="align-middle w-50">{{'Votée par' | trans}}</th>
                                 <td class="align-middle w-50">
                                     {% for user in proposal.votedBy %}
                                         <p class="m-1">{{ user.firstName }} {{ user.lastName }}</p>
@@ -57,36 +56,36 @@
                     </table>
                     <div class="d-flex flex-column justify-content-around align-items-center">
                         <div class="card shadow bg-dark p-4">
-                            <h3 class='text-center'>{{'navigation' | trans}}</h3>
-                            <div class="d-flex flex-column justify-content-around align-items-center my-2">
-                                <a href="{{ path('proposal_index') }}"><button class="btn btn-primary">{{'back_to_list' | trans}}</button></a>
-                            </div>
-                        </div>
-                        <div class="card shadow bg-dark p-4 mt-4">
-                            <h3 class='text-center'>{{'actions' | trans}}</h3>
+                            <h3 class='text-center'>{{'Actions' | trans}}</h3>
                             <div class="d-flex flex-column justify-content-around align-items-center my-2">
                                 {% if proposal in app.user.votes %}
                                     <form method="POST" action="{{ path('proposal_remove_vote', {'id': proposal.id}) }}">
                                         <input type="hidden" name="source" value="show">
-                                        <button class="btn btn-danger" type="submit">{{'remove_my_vote' | trans}}</button>
+                                        <button class="btn btn-danger" type="submit">{{'Retirer mon vote' | trans}}</button>
                                     </form>
                                 {% else %}
                                     <form method="POST" action="{{ path('proposal_add_vote', {'id': proposal.id}) }}">
                                         <input type="hidden" name="source" value="show">
-                                        <button class="btn btn-success" type="submit">{{'add_my_vote' | trans}}</button>
+                                        <button class="btn btn-success" type="submit">{{'Ajouter mon vote' | trans}}</button>
                                     </form>
                                 {% endif %}
                             </div>
                         </div>
                         {% if proposal.proposedBy.id == app.user.id and is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN') %}
+                            <div class="card shadow bg-dark p-4 mt-4">
+                                <h3 class='text-center'>{{'Gestion' | trans}}</h3>
+                                <div class="d-flex flex-column justify-content-around align-items-center my-2">
+                                        <a href="{{ path('proposal_edit', {'id': proposal.id}) }}"><button class="btn btn-warning mx-4">{{'Modifier' | trans}}</button></a>
+                                        {{ include('proposal/_delete_form.html.twig') }}
+                                </div>
+                            </div>
+                        {% endif %}
                         <div class="card shadow bg-dark p-4 mt-4">
-                            <h3 class='text-center'>{{'management' | trans}}</h3>
+                            <h3 class='text-center'>{{'Navigation' | trans}}</h3>
                             <div class="d-flex flex-column justify-content-around align-items-center my-2">
-                                    <a href="{{ path('proposal_edit', {'id': proposal.id}) }}"><button class="btn btn-warning mx-4">{{'edit' | trans}}</button></a>
-                                    {{ include('proposal/_delete_form.html.twig') }}   
+                                <a href="{{ path('proposal_index') }}"><button class="btn btn-primary">{{'Retour à la liste' | trans}}</button></a>
                             </div>
                         </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>

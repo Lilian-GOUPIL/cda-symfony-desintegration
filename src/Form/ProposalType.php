@@ -26,12 +26,12 @@ class ProposalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title', TextType::class, [
-                'label' => $this->translator->trans('title'),
-                'attr' => ['placeholder' => $this->translator->trans('title')]
+                'label' => $this->translator->trans('Titre'),
+                'attr' => ['placeholder' => $this->translator->trans('Titre') . '...']
             ])
             ->add('description', TextType::class, [
-                'label' => $this->translator->trans('description'),
-                'attr' => ['placeholder' => $this->translator->trans('title')]
+                'label' => $this->translator->trans('Description'),
+                'attr' => ['placeholder' => $this->translator->trans('Description') . '...']
             ]);
 
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $formEvent) {
@@ -42,7 +42,7 @@ class ProposalType extends AbstractType
                 $form->add('image', FileType::class, [
                     'data_class' => null,
                     'required' => false,
-                    'label' => $this->translator->trans('image_and_formats'),
+                    'label' => $this->translator->trans('Image (formats acceptés: .jpg, .png, .gif)'),
                     'constraints' => [
                         new File([
                             'maxSize' => '10m',
@@ -51,7 +51,7 @@ class ProposalType extends AbstractType
                                 'image/png',
                                 'image/gif'
                             ],
-                            'mimeTypesMessage' => $this->translator->trans('please_upload_valid_image_format'),
+                            'mimeTypesMessage' => $this->translator->trans('Veuillez sélectionner une image valide'),
                         ])
                     ],
                     'attr' => ['accept' => 'image/jpeg, image/png, image/gif']
@@ -60,7 +60,7 @@ class ProposalType extends AbstractType
                 $form->add('image', FileType::class, [
                     'data_class' => null,
                     'required' => true,
-                    'label' => $this->translator->trans('image_and_formats'),
+                    'label' => $this->translator->trans('Image (formats acceptés: .jpg, .png, .gif)'),
                     'constraints' => [
                         new File([
                             'maxSize' => '10m',
@@ -69,7 +69,7 @@ class ProposalType extends AbstractType
                                 'image/png',
                                 'image/gif'
                             ],
-                            'mimeTypesMessage' => $this->translator->trans('please_upload_valid_image_format'),
+                            'mimeTypesMessage' => $this->translator->trans('Veuillez sélectionner une image valide'),
                         ])
                     ],
                     'attr' => ['accept' => 'image/jpeg, image/png, image/gif']

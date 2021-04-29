@@ -22,25 +22,25 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('username', TextType::class, [
-                'label' => $this->translator->trans('username'),
-                'attr' => ['placeholder' => $this->translator->trans('username')]
+                'label' => $this->translator->trans('Nom d\'utilisateur'),
+                'attr' => ['placeholder' => $this->translator->trans('Nom d\'utilisateur') . '...']
             ])
             ->add('firstName', TextType::class, [
-                'label' => $this->translator->trans('first_name'),
-                'attr' => ['placeholder' => $this->translator->trans('first_name')]
+                'label' => $this->translator->trans('Prénom'),
+                'attr' => ['placeholder' => $this->translator->trans('Prénom') . '...']
             ])
             ->add('lastName', TextType::class, [
-                'label' => $this->translator->trans('last_name'),
-                'attr' => ['placeholder' => $this->translator->trans('last_name')]
+                'label' => $this->translator->trans('Nom'),
+                'attr' => ['placeholder' => $this->translator->trans('Nom') . '...']
             ])
             ->add('roles', ChoiceType::class, [
-                'label' => $this->translator->trans('roles'),
+                'label' => $this->translator->trans('Rôles'),
                 'choices' => [
-                    $this->translator->trans('admin') => 'ROLE_ADMIN',
-                    $this->translator->trans('super_admin') => 'ROLE_SUPER_ADMIN'
+                    $this->translator->trans('Administrateur') => 'ROLE_ADMIN',
+                    $this->translator->trans('Super administrateur') => 'ROLE_SUPER_ADMIN'
                 ],
                 'expanded' => true,
-                'multiple' => true,
+                'multiple' => true
             ]);
     }
 

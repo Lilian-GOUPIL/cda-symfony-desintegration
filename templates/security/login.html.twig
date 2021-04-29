@@ -1,30 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'login' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Connexion' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-6 mx-auto">
             <div class="card shadow bg-dark p-4">
                 <div class="card-title">
-                    <h1 class="text-center">{{'please_login' | trans}}</h1>
+                    <h1 class="text-center">{{'Connectez-vous' | trans}}</h1>
                 </div>
                 <div class="card-body">
                     <form method="post">
+                        <div class="d-flex flex-row justify-content-center align-items-center">
+                            <span>{{'Changer de langue' | trans}}: </span>
+                            {% if 'en' in app.request.uri %}
+                                <!-- Thanks to @Freepik for the icon -->
+                                <a class="ml-2" href="{{ path('proposal_index', { '_locale': 'fr' }) }}"><img class="img-fluid" src="{{ asset('assets/images/fr.png') }}" width="20" height="20" alt="{{'Français' | trans}}"></a>
+                            {% else %}
+                                <!-- Thanks to @Freepik for the icon -->
+                                <a class="ml-2" href="{{ path('proposal_index', { '_locale': 'en' }) }}"><img class="img-fluid" src="{{ asset('assets/images/uk.png') }}" width="20" height="20" alt="{{'Anglais' | trans}}"></a>
+                            {% endif %}
+                        </div>
                         {% if error %}
                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}
                         <div class="form-group">
-                            <label for="inputUsername">{{'username' | trans}}</label>
+                            <label for="inputUsername">{{'Nom d\'utilisateur' | trans}}</label>
                             <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword">{{'password' | trans}}</label>
+                            <label for="inputPassword">{{'Mot de passe' | trans}}</label>
                             <input type="password" name="password" id="inputPassword" class="form-control" required>
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="text-center mt-4">
-                            <button class="btn btn-primary" type="submit">{{'login' | trans}}</button>
+                            <button class="btn btn-primary" type="submit">{{'Connexion' | trans}}</button>
                         </div>
                     </form>
                 </div>

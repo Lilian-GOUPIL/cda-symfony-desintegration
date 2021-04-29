@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{{'breakdown' | trans}}{% endblock %}</title>
+        <title>{% block title %}{{'Désintégration' | trans}}{% endblock %}</title>
         <link rel="icon" href="{{ asset('assets/images/favicon.png') }}">
         {% block stylesheets %}
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,60 +22,60 @@
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between fixed-top">
                         <div class="d-flex flex-row justify-content-start align-items-center p-2">
                             <a class="navbar-brand" href="{{ path('proposal_index') }}">
-                                <img src="{{ asset('assets/images/favicon.png') }}" width="30" height="30" class="d-inline-block align-top" alt="{{'breakdown' | trans}}">
-                                <span>{{'breakdown' | trans}}</span>
+                                <img src="{{ asset('assets/images/favicon.png') }}" width="30" height="30" class="d-inline-block align-top" alt="{{'Désintégration' | trans}}">
+                                <span>{{'Désintégration' | trans}}</span>
                             </a>
 
                             <ul class="navbar-nav">
                                 {% if 'proposal' in app.request.pathinfo %}
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ path('proposal_index') }}">{{'proposals' | trans}} <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{ path('proposal_index') }}">{{'Propositions' | trans}} <span class="sr-only">(current)</span></a>
                                     </li>
                                 {% else %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ path('proposal_index') }}">{{'proposals' | trans}}</a>
+                                        <a class="nav-link" href="{{ path('proposal_index') }}">{{'Propositions' | trans}}</a>
                                     </li>
                                 {% endif %}
                                 {% if is_granted('ROLE_SUPER_ADMIN') %}
                                     {% if 'user' in app.request.pathinfo %}
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="{{ path('user_index') }}">{{'users' | trans}} <span class="sr-only">(current)</span></a>
+                                            <a class="nav-link" href="{{ path('user_index') }}">{{'Utilisateurs' | trans}} <span class="sr-only">(current)</span></a>
                                         </li>
                                     {% else %}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ path('user_index') }}">{{'users' | trans}}</a>
+                                            <a class="nav-link" href="{{ path('user_index') }}">{{'Utilisateurs' | trans}}</a>
                                         </li>
                                     {% endif %}
                                 {% endif %}
                             </ul>
                         </div>
                         <div class="d-flex flex-row justify-content-center align-items-center p-2">
-                            <h1 class="text-center text-light mb-0">{{'hello' | trans}} {{ app.user.firstName }} !</h1>
+                            <h1 class="text-center text-light mb-0">{{'Bonjour' | trans}} {{ app.user.firstName }} !</h1>
                         </div>
                         <div class="d-flex flex-row justify-content-end align-items-center p-2">
                             <ul class="navbar-nav">
                                 {% if 'en' in app.request.uri %}
                                     <!-- Thanks to @Freepik for the icon -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ path('proposal_index', { '_locale': 'fr' }) }}"><img class="img-fluid" src="{{ asset('assets/images/france.png') }}" width="20" height="20" alt="French"></a>
+                                        <a class="nav-link" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': 'fr'})) }}"><img class="img-fluid" src="{{ asset('assets/images/fr.png') }}" width="20" height="20" alt="{{'Français' | trans}}"></a>
                                     </li>
                                 {% else %}
                                     <!-- Thanks to @Freepik for the icon -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ path('proposal_index', { '_locale': 'en' }) }}"><img class="img-fluid" src="{{ asset('assets/images/uk.png') }}" width="20" height="20" alt="English"></a>
+                                        <a class="nav-link" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': 'en'})) }}"><img class="img-fluid" src="{{ asset('assets/images/uk.png') }}" width="20" height="20" alt="{{'Anglais' | trans}}"></a>
                                     </li>
                                 {% endif %}
                                 {% if 'account' in app.request.pathinfo %}
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ path('account_index') }}">{{'my_account' | trans}} <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{ path('account_index') }}">{{'Mon compte' | trans}} <span class="sr-only">(current)</span></a>
                                     </li>
                                 {% else %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ path('account_index') }}">{{'my_account' | trans}}</a>
+                                        <a class="nav-link" href="{{ path('account_index') }}">{{'Mon compte' | trans}}</a>
                                     </li>
                                 {% endif %}
                                 <li class="nav-item">
-                                    <a class="nav-link text-danger" href="{{ path('app_logout') }}">{{'logout' | trans}}</a>
+                                    <a class="nav-link text-danger" href="{{ path('app_logout') }}">{{'Déconnexion' | trans}}</a>
                                 </li>
                             </ul>
                         </div>

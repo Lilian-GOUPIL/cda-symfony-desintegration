@@ -3,7 +3,7 @@
 namespace App\EventSubscriber;
 
 use App\Entity\Request;
-use App\Services\RequestService;
+use App\Service\RequestService;
 use DateTime;
 use DateTimeZone;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

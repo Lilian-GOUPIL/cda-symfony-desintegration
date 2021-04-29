@@ -1,28 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'breakdown' | trans}} - {{'edit_user' | trans}}{% endblock %}
+{% block title %}{{'Désintégration' | trans}} - {{'Modifier un utilisateur' | trans}}{% endblock %}
 
 {% block body %}
     <div class="row mt-4">
         <div class="col-6 mx-auto">
             <div class="card shadow bg-dark p-4">
                 <div class="card-title">
-                    <h1 class="text-center">{{'edit_user' | trans}}</h1>
+                    <h1 class="text-center">{{'Modifier un utilisateur' | trans}}</h1>
                 </div>
                 <div class="card-body">
-                    {{ include('proposal/_form.html.twig', {'button_type': 'btn-success', 'button_label': 'submit' | trans}) }}
+                    {{ include('proposal/_form.html.twig', {'button_type': 'btn-success', 'button_label': 'Valider' | trans}) }}
                     <div class="d-flex flex-column justify-content-around align-items-center">
                         <div class="card shadow bg-dark p-4 mt-4">
-                            <h3 class='text-center'>{{'management' | trans}}</h3>
+                            <h3 class='text-center'>{{'Gestion' | trans}}</h3>
                             <div class="d-flex flex-column justify-content-around align-items-center my-n2">
                                 {{ include('user/_reset_password_form.html.twig') }}
                                 {{ include('user/_delete_form.html.twig') }}
                             </div>
                         </div>
                         <div class="card shadow bg-dark p-4 mt-4">
-                            <h3 class='text-center'>{{'navigation' | trans}}</h3>
+                            <h3 class='text-center'>{{'Navigation' | trans}}</h3>
                             <div class="d-flex flex-column justify-content-around align-items-center my-2">
-                                <a href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary">{{'back_to_details' | trans}}</button></a>
+                                <a href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary">{{'Retour aux détails' | trans}}</button></a>
                             </div>
                         </div>
                     </div>

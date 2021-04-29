@@ -3,7 +3,7 @@
 namespace App\EventSubscriber;
 
 use App\Entity\Exception;
-use App\Services\ExceptionService;
+use App\Service\ExceptionService;
 use DateTime;
 use DateTimeZone;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

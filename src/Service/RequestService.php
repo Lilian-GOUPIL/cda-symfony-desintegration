@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 
+use App\Entity\Request;
+use App\Repository\RequestRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 
-class ExceptionService {
+class RequestService {
     private $logger;
     private $entityManager;
 
@@ -14,11 +16,11 @@ class ExceptionService {
         $this->entityManager = $entityManager;
     }
 
-    public function new($exception) {
-        $this->entityManager->persist($exception);
+    public function new($request) {  
+        $this->entityManager->persist($request);
         $this->entityManager->flush();
 
         $this->logger->info('Request added successfully');
-        return $exception;
+        return $request;
     }
 }
