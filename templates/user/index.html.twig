@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'breakdown' | trans}} - {{'user_list' | trans}}{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-10 mx-auto">
+            <div class="card shadow bg-dark p-4">
+                <div class="card-title">
+                    <h1 class="text-center">{{'users' | trans}}</h1>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'add_user' | trans}}</button></a>
+                    </div>
+                    <table class="table table-dark table-bordered table-hover">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="align-middle" scope="col">{{'id' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'username' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'first_name' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'last_name' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'roles' | trans}}</th>
+                                <th class="align-middle" scope="col">{{'actions' | trans}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr class="text-center">
+                                <td class="align-middle">{{ user.id }}</td>
+                                <td class="align-middle">{{ user.username }}</td>
+                                <td class="align-middle">{{ user.firstName }}</td>
+                                <td class="align-middle">{{ user.lastName }}</td>
+                                <td class="align-middle">
+                                    {% if 'ROLE_SUPER_ADMIN' in user.roles %}
+                                        <p class="m-1">{{'super_admin' | trans}}</p>
+                                    {% endif %}
+                                    {% if 'ROLE_ADMIN' in user.roles %}
+                                        <p class="m-1">{{'admin' | trans}}</p>
+                                    {% endif %}
+                                    {% if 'ROLE_USER' in user.roles %}
+                                        <p class="m-1">{{'user' | trans}}</p>
+                                    {% endif %}
+                                </td>
+                                <td class="align-middle">
+                                    <a href="{{ path('user_show', {'id': user.id}) }}"><button class="btn btn-primary m-1">{{'details' | trans}}</button></a>
+                                    <a href="{{ path('user_edit', {'id': user.id}) }}"><button class="btn btn-warning m-1">{{'edit' | trans}}</button></a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr class="text-center">
+                                <td colspan="6">{{'no_user_found' | trans}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="text-center mt-4">
+                        <a href="{{ path('user_new') }}"><button class="btn btn-success">{{'add_user' | trans}}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

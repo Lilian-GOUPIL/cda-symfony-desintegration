@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="rv2OE0w" resname="breakdown">
+        <source>breakdown</source>
+        <target>Désintégration</target>
+      </trans-unit>
+      <trans-unit id="wMvw_8r" resname="proposals">
+        <source>proposals</source>
+        <target>Propositions</target>
+      </trans-unit>
+      <trans-unit id="fftM9nd" resname="users">
+        <source>users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="LPJNul_" resname="hello">
+        <source>hello</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="BRsUZXR" resname="my_account">
+        <source>my_account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="ACcM9j_" resname="logout">
+        <source>logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="BVPZWPC" resname="change_password_to_use_the_app">
+        <source>change_password_to_use_the_app</source>
+        <target>Changez de mot de passe pour utiliser l'application</target>
+      </trans-unit>
+      <trans-unit id="Gb9TXAG" resname="my_infos">
+        <source>my_infos</source>
+        <target>Mes informations</target>
+      </trans-unit>
+      <trans-unit id="FveKfWM" resname="username">
+        <source>username</source>
+        <target>Nom d'uilisateur</target>
+      </trans-unit>
+      <trans-unit id="BUFvv5j" resname="first_name">
+        <source>first_name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="Iya4YwA" resname="last_name">
+        <source>last_name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="Zs9VE7N" resname="roles">
+        <source>roles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id="HtyJ.d5" resname="change_password">
+        <source>change_password</source>
+        <target>Changer de mot de passe</target>
+      </trans-unit>
+      <trans-unit id="ALnmYiM" resname="new_password">
+        <source>new_password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="dUkL17k" resname="submit">
+        <source>submit</source>
+        <target>Valider</target>
+      </trans-unit>
+      <trans-unit id="v7.Oggu" resname="confirm_delete_proposal">
+        <source>confirm_delete_proposal</source>
+        <target>Êtes-vous sûr de vouloir supprimer cette proposition ?</target>
+      </trans-unit>
+      <trans-unit id="AUSmrMr" resname="cannot_be_undone">
+        <source>cannot_be_undone</source>
+        <target>Cette action est irréversible</target>
+      </trans-unit>
+      <trans-unit id="YZdZVQP" resname="delete">
+        <source>delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="EaOtOEC" resname="edit_proposal">
+        <source>edit_proposal</source>
+        <target>Modifier une proposition</target>
+      </trans-unit>
+      <trans-unit id="KIllofL" resname="management">
+        <source>management</source>
+        <target>Gestion</target>
+      </trans-unit>
+      <trans-unit id="1w1aeQn" resname="navigation">
+        <source>navigation</source>
+        <target>Navigation</target>
+      </trans-unit>
+      <trans-unit id="2QOAie." resname="back_to_details">
+        <source>back_to_details</source>
+        <target>Retour aux détails</target>
+      </trans-unit>
+      <trans-unit id="qvIyBkY" resname="title">
+        <source>title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="yQRveje" resname="description">
+        <source>description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="LoS0lvB" resname="image_and_formats">
+        <source>image_and_formats</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="UYuJKxj" resname="please_upload_valid_image_format">
+        <source>please_upload_valid_image_format</source>
+        <target>Veuillez choisir un format d'image accepté</target>
+      </trans-unit>
+      <trans-unit id="i1gW702" resname="proposal_list">
+        <source>proposal_list</source>
+        <target>Liste des propositions</target>
+      </trans-unit>
+      <trans-unit id="DNFiRpX" resname="add_proposal">
+        <source>add_proposal</source>
+        <target>Ajouter une proposition</target>
+      </trans-unit>
+      <trans-unit id="YQXWzHa" resname="image">
+        <source>image</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="nfYJVI3" resname="votes">
+        <source>votes</source>
+        <target>Votes</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="Qf.Yt2r" resname="details">
+        <source>details</source>
+        <target>Détails</target>
+      </trans-unit>
+      <trans-unit id="Bs6zrX_" resname="remove_my_vote">
+        <source>remove_my_vote</source>
+        <target>Retirer mon vote</target>
+      </trans-unit>
+      <trans-unit id="OGRJZFX" resname="add_my_vote">
+        <source>add_my_vote</source>
+        <target>Ajouter mon vote</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="BAiZ3aU" resname="no_proposal_found">
+        <source>no_proposal_found</source>
+        <target>Aucune proposition trouvée</target>
+      </trans-unit>
+      <trans-unit id="6tlp1bV" resname="back_to_list">
+        <source>back_to_list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="KR2j0Zr" resname="proposal_details">
+        <source>proposal_details</source>
+        <target>Détails de la proposition</target>
+      </trans-unit>
+      <trans-unit id="pWFFJwz" resname="id">
+        <source>id</source>
+        <target>Identifiant</target>
+      </trans-unit>
+      <trans-unit id="1wacsQu" resname="proposed_by">
+        <source>proposed_by</source>
+        <target>Proposée par</target>
+      </trans-unit>
+      <trans-unit id="k60KIJX" resname="proposed_the">
+        <source>proposed_the</source>
+        <target>Proposée le</target>
+      </trans-unit>
+      <trans-unit id="xOXJ.bp" resname="last_update_the">
+        <source>last_update_the</source>
+        <target>Dernière modification le</target>
+      </trans-unit>
+      <trans-unit id="0u7r7M2" resname="number_of_votes">
+        <source>number_of_votes</source>
+        <target>Nombre de votes</target>
+      </trans-unit>
+      <trans-unit id="58ZpusZ" resname="voted_by">
+        <source>voted_by</source>
+        <target>Votée par</target>
+      </trans-unit>
+      <trans-unit id="QoghNQ6" resname="login">
+        <source>login</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="GzlO1LB" resname="please_login">
+        <source>please_login</source>
+        <target>Connectez-vous</target>
+      </trans-unit>
+      <trans-unit id="XohImNo" resname="password">
+        <source>password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="_SLVS9a" resname="confirm_delete_user">
+        <source>confirm_delete_user</source>
+        <target>Êtes-vous sûr de vouloir supprimer cet utilisateur ?</target>
+      </trans-unit>
+      <trans-unit id="EB3knb9" resname="confirm_reset_password">
+        <source>confirm_reset_password</source>
+        <target>Êtes-vous sûr de vouloir réinitialiser le mot de passe de cet utilisateur ?</target>
+      </trans-unit>
+      <trans-unit id="kbL.g5o" resname="default_value_is_username">
+        <source>default_value_is_username</source>
+        <target>La valeur par défaut est le nom d'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="z8lBMx3" resname="reset_password">
+        <source>reset_password</source>
+        <target>Réinitialiser le mot de passe</target>
+      </trans-unit>
+      <trans-unit id="dcF2pgN" resname="edit_user">
+        <source>edit_user</source>
+        <target>Modifier un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="YkFIMqw" resname="user_list">
+        <source>user_list</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="m4Y9cPG" resname="add_user">
+        <source>add_user</source>
+        <target>Ajouter un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="2LzW0vc" resname="no_user_found">
+        <source>no_user_found</source>
+        <target>Aucun utilisateur trouvé</target>
+      </trans-unit>
+      <trans-unit id="jGl25bV" resname="admin">
+        <source>admin</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="NbHnLFG" resname="super_admin">
+        <source>super_admin</source>
+        <target>Super administrateur</target>
+      </trans-unit>
+      <trans-unit id="BPiZbad" resname="user">
+        <source>user</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="QnNtxtl" resname="user_details">
+        <source>user_details</source>
+        <target>Détails de l'utilisateur</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

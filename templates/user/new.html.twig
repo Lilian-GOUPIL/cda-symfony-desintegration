@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'breakdown' | trans}} - {{'add_user' | trans}}{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-6 mx-auto">
+            <div class="card shadow bg-dark p-4">
+                <div class="card-title">
+                    <h1 class="text-center">{{'add_user' | trans}}</h1>
+                </div>
+                <div class="card-body">
+                    {{ include('proposal/_form.html.twig', {'button_type': 'btn-success', 'button_label': 'submit' | trans}) }}
+
+                    <div class="text-center mt-4">
+                        <a href="{{ path('user_index') }}"><button class="btn btn-primary">{{'back_to_list' | trans}}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

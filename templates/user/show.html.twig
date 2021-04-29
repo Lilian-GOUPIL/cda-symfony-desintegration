@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'breakdown' | trans}} - {{'user_details' | trans}}{% endblock %}
+
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-10 mx-auto">
+            <div class="card shadow bg-dark p-4">
+                <div class="card-title">
+                    <h1 class="text-center">{{'user_details' | trans}}</h1>
+                </div>
+                <div class="card-body">
+                    <table class="table table-dark table-hover">
+                        <tbody>
+                            <tr class="text-center">
+                                <th class="align-middle w-50">{{'id' | trans}}</th>
+                                <td class="align-middle w-50">{{ user.id }}</td>
+                            </tr>
+                            <tr class="text-center">
+                                <th class="align-middle w-50">{{'username' | trans}}</th>
+                                <td class="align-middle w-50">{{ user.username }}</td>
+                            </tr>
+                            <tr class="text-center">
+                                <th class="align-middle w-50">{{'first_name' | trans}}</th>
+                                <td class="align-middle w-50">{{ user.firstName }}</td>
+                            </tr>
+                            <tr class="text-center">
+                                <th class="align-middle w-50">{{'last_name' | trans}}</th>
+                                <td class="align-middle w-50">{{ user.lastName }}</td>
+                            </tr>
+                            <tr class="text-center">
+                                <th class="align-middle w-50">{{'roles' | trans}}</th>
+                                <td class="align-middle w-50">
+                                    {% if 'ROLE_SUPER_ADMIN' in user.roles %}
+                                        <p class="m-1">{{'super_admin' | trans}}</p>
+                                    {% endif %}
+                                    {% if 'ROLE_ADMIN' in user.roles %}
+                                        <p class="m-1">{{'admin' | trans}}</p>
+                                    {% endif %}
+                                    {% if 'ROLE_USER' in user.roles %}
+                                        <p class="m-1">{{'user' | trans}}</p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex flex-column justify-content-around align-items-center">
+                        <div class="card shadow bg-dark p-4">
+                            <h3 class='text-center'>{{'navigation' | trans}}</h3>
+                            <div class="d-flex flex-column justify-content-around align-items-center my-2">
+                                <a href="{{ path('user_index') }}"><button class="btn btn-primary">{{'back_to_list' | trans}}</button></a>
+                            </div>
+                        </div>
+                        <div class="card shadow bg-dark p-4 mt-4">
+                            <h3 class='text-center'>{{'management' | trans}}</h3>
+                            <div class="d-flex flex-column justify-content-around align-items-center my-2">
+                                <a href="{{ path('user_edit', {'id': user.id}) }}"><button class="btn btn-warning">{{'edit' | trans}}</button></a>
+                                {{ include('user/_delete_form.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

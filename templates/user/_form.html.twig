@@ -1,0 +1,8 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="text-center">
+        <button class="btn {{ button_type|default('btn-success')  }} mt-4">{{ button_label|default('submit' | trans) }}</button>
+    </div>
+{{ form_end(form) }}
