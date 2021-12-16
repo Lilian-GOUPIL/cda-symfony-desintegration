@@ -69,7 +69,7 @@ $(document).ready(() => {
                     isNyanCatActive = true;
 
                     $(body).empty();
-                    $(body).load('../assets/secrets/nyan-cat.html');
+                    $(body).load('../../assets/secrets/nyan-cat.html');
                 }
 
                 position = 0;
